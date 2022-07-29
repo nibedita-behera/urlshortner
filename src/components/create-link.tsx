@@ -34,11 +34,12 @@ const CreateLinkForm: NextPage = () => {
         return (
             <>
                 <div className="flex justify-center items-center">
-                    <h1>{`${url}/${form.slug}`}</h1>
+
+                    <h2>{`${url}/${form.slug}`}</h2>
                     <input
                         type="button"
                         value="Copy Link"
-                        className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer ml-2"
+                        className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer ml-2 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
                         onClick={() => {
                             copy(`${url}/${form.slug}`);
                         }}
@@ -47,7 +48,7 @@ const CreateLinkForm: NextPage = () => {
                 <input
                     type="button"
                     value="Reset"
-                    className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer m-5"
+                    className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer m-5 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
                     onClick={() => {
                         createSlug.reset();
                         setForm({ slug: "", url: "" });
@@ -91,8 +92,8 @@ const CreateLinkForm: NextPage = () => {
                 />
                 <input
                     type="button"
-                    value="Random"
-                    className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer ml-2"
+                    value="linkname"
+                    className="border-solid border-1 border-white-600 rounded-md bg-pink-500 py-1.5 px-1 font-bold cursor-pointer ml-2 text-gray-700"
                     onClick={() => {
                         const slug = nanoid();
                         setForm({
@@ -116,7 +117,7 @@ const CreateLinkForm: NextPage = () => {
             <input
                 type="submit"
                 value="Create"
-                className="rounded bg-pink-500 p-1 font-bold cursor-pointer mt-1"
+                className="border-solid border-2 border-white-600 rounded-md bg-pink-500 p-1 font-bold cursor-pointer mt-1 text-white hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 "
                 disabled={slugCheck.isFetched && slugCheck.data!.used}
             />
         </form>

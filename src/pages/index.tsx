@@ -8,11 +8,18 @@ const CreateLinkForm = dynamic(() => import("../components/create-link"), {
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gray-950 text-white">
-      <Suspense>
-        <CreateLinkForm />
-      </Suspense>
+    <div>
+      <h1 className=" flex flex-col justify-center items-center border-solid border-2 border-white-600 rounded-md bg-pink-500 py-1.5 px-4 font-black mt-9 bd-highlight italic text-white">Create Your shortlinks here !!!!</h1>
+      <div className="flex flex-col justify-center items-center h-screen bg-gray-300 text-white">
+
+        <Suspense>
+          <CreateLinkForm />
+        </Suspense>
+      </div>
     </div>
+
+
+
   );
 };
 
